@@ -136,3 +136,18 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR /'media'
+
+
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
+
+
+from details.secrets import * #login details imported
+#SMTP config
+EMAIL_HOST = smtp_address_se
+EMAIL_PORT = 587
+EMAIL_HOST_USER = email_login_se
+EMAIL_HOST_PASSWORD = email_password_se
+EMAIL_USE_TLS = True
