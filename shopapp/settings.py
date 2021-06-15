@@ -150,4 +150,5 @@ EMAIL_HOST = smtp_address_se
 EMAIL_PORT = 587
 EMAIL_HOST_USER = email_login_se
 EMAIL_HOST_PASSWORD = email_password_se
+DEFAULT_FROM_EMAIL = 'shopapp@portal.co.uk'
 EMAIL_USE_TLS = True
