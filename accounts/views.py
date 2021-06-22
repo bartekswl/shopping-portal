@@ -16,6 +16,7 @@ from django.core.mail import EmailMessage
 
 from carts.views import _cart_id
 from carts.models import Cart, CartItem
+from orders.models import Order
 import requests
 
 
@@ -170,7 +171,14 @@ def activate(request, uidb64, token):
 
 @login_required(login_url = 'login')
 def dashboard(request):
-    return render(request, 'accounts/dashboard.html')
+
+    orders = Order.objects.order_by('-created_at').filter(user_id=request.user.id, is_ordered=True)
+    orders_count = orders.count()
+    context = {
+        'orders_count': orders_count,
+    }
+
+    return render(request, 'accounts/dashboard.html', context)
 
 
 
@@ -257,3 +265,16 @@ def resetPassword(request):
     except:
         messages.error(request, 'The link is expired! Please start again.')
         return redirect('forgotPassword')
+
+
+
+
+def my_orders(request):
+
+    orders = Order.objects.filter(user=request.user, is_ordered=True).order_by('-created_at')
+
+    context = {
+        'orders': orders,
+    }
+
+    return render(request, 'accounts/my_orders.html', context)
