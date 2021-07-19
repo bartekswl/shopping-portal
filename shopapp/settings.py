@@ -166,7 +166,7 @@ MESSAGE_TAGS = {
 }
 
 
-from details.secrets import * #login details imported
+from secrets import * #login details imported
 #SMTP config
 EMAIL_HOST = smtp_address_se
 EMAIL_PORT = 587
