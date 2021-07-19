@@ -55,7 +55,7 @@ def register(request):
             send_email = EmailMessage(mail_subject, message, to=[to_email])
             send_email.send()
 
-            #messages.success(request, 'We have sent you activation link. Please check your inbox and activate your account.')
+            messages.success(request, 'We have sent you activation link. Please check your inbox and activate your account.')
             return redirect('/accounts/login/?command=verification&email='+email)
 
     else:
