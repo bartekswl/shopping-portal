@@ -165,8 +165,9 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
 
-
-from secrets import * #login details imported
+email_login_se= "bartekswl@gmail.com"
+email_password_se= "8xJfpUgCKvz1BQt9"
+smtp_address_se = 'smtp-relay.sendinblue.com'
 #SMTP config
 EMAIL_HOST = smtp_address_se
 EMAIL_PORT = 587
