@@ -165,9 +165,7 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
 
-email_login_se= "bartekswl@gmail.com"
-email_password_se= "8xJfpUgCKvz1BQt9"
-smtp_address_se = 'smtp-relay.sendinblue.com'
+from cisza import *
 #SMTP config
 EMAIL_HOST = smtp_address_se
 EMAIL_PORT = 587
