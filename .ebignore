@@ -3,4 +3,4 @@ virtual
 details
 media
 data.json
-
+db.sqlite3
